@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handlebars</title>
+    <link rel="stylesheet" href="./style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Cormorant+Garamond&family=DM+Sans:ital,opsz,wght@0,9..40,700;1,9..40,700&family=Dela+Gothic+One&family=EB+Garamond&family=IM+Fell+DW+Pica+SC&family=Inter&family=Kaushan+Script&family=Mate+SC&family=Montserrat:wght@400;600&family=Noto+Sans+Display:wght@800&family=Open+Sans:ital,wght@0,600;1,500&family=Pacifico&family=Playfair+Display&family=Poppins&family=Preahvihear&family=Roboto:ital,wght@0,400;0,500;1,900&family=Ubuntu&family=Work+Sans:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Cormorant+Garamond&family=DM+Sans:ital,opsz,wght@0,9..40,700;1,9..40,700&family=Dela+Gothic+One&family=EB+Garamond&family=IM+Fell+DW+Pica+SC&family=Inter&family=Kaushan+Script&family=Mate+SC&family=Montserrat:wght@400;600&family=Noto+Sans+Display:wght@800&family=Open+Sans:ital,wght@0,600;1,500&family=Pacifico&family=Playfair+Display&family=Poppins&family=Preahvihear&family=Roboto:ital,wght@0,400;0,500;1,900&family=Space+Mono:wght@700&family=Ubuntu&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- <script class="element" type="text/x-handlebars-template">
+        <div class="div">
+            <h1 class="title">{{ name }}</h1>
+            <p class="text">{{ email }}</p>
+        </div>
+    </script>
+
+    <div class="container">
+        
+    </div> -->
+
+    <script class="productsList" type="text/x-handlebars-template">
+        {{#each products}}
+            <div class="product-card">
+                <img src="{{image}}" alt="{{name}}" class="card-img">
+                <h3 class="card-title">{{name}}</h3>
+                <p class="card-description">{{description}}</p>
+                <p class="card-price">{{price}}</p>
+            </div>
+        {{/each}}
+    </script>
+
+    <div class="products-container"></div>
+
+
+    <!-- ----- 1. Aufgabe ----- -->
+
+    <script class="countriesList" type="text/x-handlebars-template">
+        {{#each countries}}
+            <div class="country-card">
+                <h2 class="country-name">{{name}}</h2>
+                <h3 class="country-capital">Capital: {{capital}}</h3>
+                <p class="country-currency">Currency: {{currency}}</p>
+                <p class="country-language">Language: {{language}}</p>
+                <p class="country-population">Population: {{population}}Mio</p>
+                <img src="{{flag}}" alt="{{name}}" class="country-img">
+                <p class="country-infected">Infected: {{infected}}</p>
+            </div>
+        {{/each}}
+    </script>
+
+    <div class="country-container"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
